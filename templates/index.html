@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Archive{% endblock %}
+
+{% block content %}
+
+
+<h2>Pietro Novelli</h2>
+
+<h3>Last posts</h3>
+{% for entry in archive[:5] %}
+
+  <article>
+    <header>
+      <time datetime="{{ entry.date }}">{{ entry.date.strftime('%b %-d, %Y') }}</time>
+      <div>
+      <h2><a href="{{ entry.dst }}">{{ entry.title }}</a></h2>
+      {% if entry.description %}
+      <p>— {{ entry.description }}</p>
+      {% endif %}
+      </div>
+    </header>
+  </article>
+{% endfor %}
+
+{% endblock %}
