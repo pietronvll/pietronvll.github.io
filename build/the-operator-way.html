@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="author" content="Pietro Novelli">
+    <meta name="description" content="A paradigm to rethink dynamical processes">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.15/dist/katex.min.css" integrity="sha384-Htz9HMhiwV8GuQ28Xr9pEs1B4qJiYu/nYLLwlDklR53QibDfmQzi7rYxXhMH/5/u" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.15/dist/katex.min.js" integrity="sha384-bxmi2jLGCvnsEqMuYLKE/KsVCxV3PqmKeK6Y6+lmNXBry6+luFkEOsmp5vD9I/7+" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.15/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+
+    <title>The Operator Way</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/"></a></h1>
+      <nav>
+        <h2></h2>
+        <ul>
+          <li><h2><a href="/">Home</a></h2></li>
+          <li><h2><a href="/archive.html">Blog</a></h2></li>
+          <li><h2><button style="height: 100%;vertical-align: middle; border-radius: 10px;" id="theme-toggle">Toggle Theme</button></h2></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+    
+
+  
+  <h1>The Operator Way</h1>
+  
+
+  <h2>A paradigm to rethink dynamical processes</h2>
+<ul>
+<li>How to sensibly choose the next word to complete this unfinished — ?</li>
+<li>How much time it takes, on average, for a new experimental drug to bind to the human organism?</li>
+<li>How can self-driving vehicles drive safely at all?</li>
+</ul>
+<p>These seemingly random questions are tied together by the common thread of understanding how things <em>evolve</em>. Words follow each other in patterns that create meaning. Molecules navigate the human body according to the laws of atomic physics. And traffic flows through our cities in largely predictable patterns, determining our driving actions.</p>
+<p>Understanding evolution in this broad sense is no small feat. I&rsquo;ll take up the challenge by describing a paradigm that characterizes all sorts of evolving processes, and no, this is not yet another take on <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">transformers</a>.</p>
+<p>The roots of this approach — which I&rsquo;ll call <em>the operator way</em> — stretch all the way back to the dawn of quantum mechanics. However, we need to fast-forward to the early 2000s before a critical mass of researchers from the fields of stochastic processes and applied math started getting serious with it. As of today, the operator way is making its way into the AI era, where its power and elegance are truly brought to bear.</p>
+<p>Unfortunately, the most insigthful ideas behind the operator way are hidden beneath a thick coat of abstractions, making it a tough topic to enter. This post is an attempt at describing it in plain, non-technical terms, so that as many as possible can appreciate it and the fresh new perspective it offers on the study of sequential and evolving processes.</p>
+<p>Let’s dive in. </p>
+<h2>Dealing with <em>change</em></h2>
+<p>Whenever we observe an evolving process, we might find ourselves wondering what&rsquo;s the rule that ties our observations together, if any. In other words, the fact that $x_{t + 1}$ was observed <em>after</em> $x_{t}$ is just a coincidence, or is it the result of a predictable relationship? </p>
+<p>Oftentimes, such a relationship exists. Let&rsquo;s take a look at a couple of examples:</p>
+<ol>
+<li><strong>Planetary motion</strong> (<em>deterministic change</em>)
+Before Einstein&rsquo;s relativity, the best description of planetary orbits came from <a href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion">Newton&rsquo;s laws of motion</a>. These are differential equations which, given the positions and velocities of planets at at any time $t$, can be solved to predict their positions and velocities at a later time $t&rsquo;$. This is an example of <em>deterministic</em> dynamics, where each initial condition leads to a unique and well-defined evolution of the system.</li>
+<li><strong>Language</strong> (<em>stochastic change</em>)
+In <a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">A Mathematical Theory of Communication</a>, Claude Shannon described how the English language can be approximated by producing letters or words according to their relative frequencies in the natural language. This is a <em>stochastic</em> change, where the next state $x_{t + 1}$ (the next word or letter) isn&rsquo;t certain. However, despite being uncertain, the next state abides to a definite conditional probability law $\mathbb{P}(x_{t + 1} | x_{t})$. Incidentally, this principle is also at the core of the large language models fueling the GPTs, Claudes, and Geminis out there.</li>
+</ol>
+<p>In machine learning and AI, we make use of observations and data to devise <em>models</em> of their inter-relationships. In the case of evolving processes, there are three good reasons to go after a good <em>sequential</em> model: </p>
+<ul>
+<li><strong>Interpretability</strong>: understanding <em>how</em> $x_{t} \to x_{t + 1}$.</li>
+<li><strong>Prediction</strong>: <em>forecasting</em> $x_{t + 1}$ or $\mathbb{P}[x_{t + 1}]$, having observed $x_{t}$.</li>
+<li><strong>Control</strong>: nudging the system toward a desired state $x_{t +1}$, starting from $x_{t}$.</li>
+</ul>
+<h3>The case of <em>linear</em> models</h3>
+<p>An evolving process is said to be linear when its rate of change does not depend on the current state of the system $x_{t}$. As an example of linear evolution, imagine that at some time $t$ we lend some money $x_{t}$ at a fixed rate of 3% [^1] . After one year, the value of our investment $x_{t + 1}$ will be increased by 3%, irrespectively of the initial amount invested. </p>
+<p><strong>A bit of math.</strong> So far, I haven&rsquo;t bothered defining what our observations $x_{t}$ <em>are</em>. In the following, I will be content assuming that:
+1. It makes sense to multiply $x$ with a number $\alpha$. For example, if $x_{t}$, is the amount of our investment in millions, then $1000000 \cdot x$ is  our investment in dollars.
+2. Two different $x$, $x&rsquo;$ can be meaninfgully <em>summed together</em>. 
+If both conditions are satisfied, I&rsquo;ll generically refer to $x$ as a <em>vector</em>. <a href="">Euclidean vectors</a> clearly satisfy them, but notice that also <em>functions</em> can be summed together and multiplied by a arbitrary numbers to get&hellip; yet another function. If $x_{t}$ is a vector[^2] and follows a <em>linear</em> evolution, it exists a rule $\mathsf{T}$ such that:</p>
+<ol>
+<li>$x_{t + 1} = \mathsf{T}x_{t}$,</li>
+<li>$\mathsf{T}(x + y) = \mathsf{T}x + \mathsf{T}y$, </li>
+<li>$\mathsf{T}(\alpha x) = \alpha \mathsf{T}x$.</li>
+</ol>
+<p>I&rsquo;ve dubbed such a rule $\mathsf{T}$ as it <strong>T</strong>ransfers $x_{t}$ to $x_{t + 1}$. When $x \in \mathbb{R}^{d}$ is an Euclidean vector, then $\mathsf{T}$ is a $d\times d$ real matrix. In more exotic cases, for example when $x_{t}$ is a <em>function</em>, I&rsquo;ll stick to the mathematicians&rsquo; naming conventions and refer to $\mathsf{T}$ as a <strong><em>Linear Operator</em></strong>.</p>
+<p>In linearly evolving processes the triad of interpretability, prediction, and control has been completely sorted out by the scientific community, which came up a vast body of elegant and efficient techniques to address these tasks. </p>
+<p>Nonlinear systems, on the other hand, are a different beast, with interpretability and control becoming significantly more challenging. This aside on linear systems will be extremely important as we progress. For now, bear with me.</p>
+<h3>What does <em>learning</em> a dynamics means, anyway?</h3>
+<p>The taxonomy of models for evolving processes is quite intricate. In the two examples discussed above, we&rsquo;ve seen that a dynamical model can be specified by, for example,</p>
+<ul>
+<li>A set of differential equations.</li>
+<li>A transition probability $\mathbb{P}(x_{t + 1} | x_{t})$.</li>
+</ul>
+<p>There are many more options, and <em>before even trying</em> to throw some AI at our data hoping to get a model out of it, we have to define a suitable target, that is a mathematical entity that:</p>
+<ol>
+<li>Can be approximated from data</li>
+<li>Can be represented, stored, and queried in a computer</li>
+<li>Unlocks at least one of the tasks in the triad (Interpretability, Prediction, Control)</li>
+</ol>
+<p>Coming back to our examples:
+- In symbolic regression, the target is an analytical equation, which can be approximated from data using tools ranging from genetic algorithms to deep learning. Symbolic regression is perfect to learn deterministic equations such as the aforementioned Newton laws. It  provides extremely interpretable models, which are easy enough to query to predict new data. Astrophysicists, <a href="https://www.ias.edu/news/astrophysicists-weigh-galaxy-clusters-artificial-intelligence">for example</a>, are already deploying it succesfully in cutting-edge research use cases. it is being deployed succesfully.
+- As I&rsquo;ve noted already, large language models approximate a transition probability  $\mathbb{P}(x_{t + 1} | x_{t})$ and leverage expressive neural-network architectures[^3] on huge amounts of data to get accurate predictions. Interpreting and controlling language models, however, it is still a formidable task — ever heard of <em>alignment</em> and <em>mechanistic interpretability</em>?</p>
+<h2>The Operator Way</h2>
+<p>The operator way offers a different option, motivated by the following widely-applicable observation</p>
+<blockquote>
+<p>It <strong>always</strong> exists a suitable encoding $\phi$ of our observations $x_{t}$ such that $\phi(x_{t})$ evolves <strong>linearly</strong>.</p>
+</blockquote>
+<p>While the previous fact is easy to state, its proof requires a bunch of technicalities. Let&rsquo;s set them aside for a moment, and focus on what it <em>implies</em>, instead. As I&rsquo;ve explained above, when the evolution $\phi(x_{t}) \to \phi(x_{t + 1})$ is <em>linear</em> it means it exists an <em>operator</em> $\mathsf{T}$ such that $\phi(x_{t + 1}) = \mathsf{T}\phi(x_{t})$. So, provided the right representation $\phi$, the operator $\mathsf{T}$ encodes the law of evolution of $x_{t}$. </p>
+<p>Now, notice that:</p>
+<ul>
+<li>$\mathsf{T}$ is a <em>definite mathematical entity</em>, which can be approximated from data by minimizing the linearization error $\Vert \phi(x_{t +1}) - \mathsf{T}\phi(X_{t})\Vert$. Rings any bell?</li>
+<li>While counterexamples exist, the existence of an appropriate linearizing transformation $\phi$ can be proved on <em>extremely</em> general grounds, and applies to both deterministic systems via the so-called Koopman operator, and stochastic systems via the Transfer operator.</li>
+</ul>
+<p>The operator way acknowledges that dynamical processes can be <em>linearized</em> by encoding the dynamical data in a suitable representation $\phi$, and identifies them with the resulting <em>linear</em> law of evolution $\mathsf{T}$. Now, recalling that for linearly evolving processes such as $\phi(x_{t})$, the whole triad of Interpretability, Prediction, and Control can be addressed simultaneously, makes the opertor way a <em>really compelling</em> modeling choice. </p>
+<h2>Cool! How do we learn it?</h2>
+<p>In the introductory paragraph I&rsquo;ve argued that the operator way can be happily married to machine learning. How? In a typical machine learning scenario, we have a stream of data $x_{t}, x_{t + 1}, \ldots$ coming at us, and we want to learn a <em>model</em> describing the evolving patters of these observations. Following the insights from the operator way, we posit that it exists</p>
+<ol>
+<li>A <em>representation</em> $\phi(x)$ of the data, and</li>
+<li>A <em>latent linear model</em> $\mathsf{T}$ such that $\phi(x_{t +1}) = \mathsf{T}\phi(x_{t}).$</li>
+</ol>
+<p>Now, suppose someone gave us $\phi$. In this case, $\mathsf{T}$ can be approximated from data by minimizing the sum of the squared errors ${\rm Error}(\mathsf{T}) = \sum_{t} \Vert \phi(x_{t +1}) - \mathsf{T}\phi(X_{t})\Vert^{2}$. For any reader with some data-science experience: this is just an instance of multivariate linear regression, where $\phi(x_{t + 1})$/$\phi(x_{t})$ are the dependent/independent variables, respectively.</p>
+<p>When $\phi$ is known, approximating $\mathsf{T}$ from data is a well-specified problem, which can be solved efficiently. On the other hand, when a suitable transformation $\phi$ is unknown, one can bootstrap the whole process learning both $\phi$ and $\mathsf{T}$ from data. This is a more challenging scenario than approximating $\mathsf{T}$ alone, but a number of compelling options are already available[^4].</p>
+<p>There is a catch in all of this. The catch lies in the nature of the linearizing representation $\phi$. The theory says it exists, but it also says that it might be <em>infinite dimensional</em> — if you&rsquo;re uncomfortable with infinities, just picture yourself $\phi(x_{t})$ as an euclidean vector with an infinite number of components. Pretty impractical to store in a computer. </p>
+<p>Luckily, this is just a problem <em>in theory</em>, and can be effectively circumvented:</p>
+<ul>
+<li>Kernel methods, while not fashionable as they used to be, offer a viable framework to learn with infinite-dimensional representations.</li>
+<li>Finite-dimensional representations usually incur little errors, when learned from data with one of the approaches mentioned above.</li>
+</ul>
+<p>As we approach the end of this post, allow me just few more lines to describe how the operator way originated in the early days of quantum mechanics. You&rsquo;ll be surprised (hopefully even awed) to see how it emerged from a <em>completely different way of thinking</em> evolving processes!</p>
+<h2>The Operator Way and Quantum Mechanics.</h2>
+<p>It&rsquo;s 1931, the foundations of quantum mechanics have been laid down by just few years. In this novel view of nature, a physical system is entirely described by its so-called <em>state</em> $x$, which in practice is an Euclidean vector or a function[^5]. The state $x_{t}$ provides information on the system, at a given time $t$. Nowdays we have <a href="https://en.wikipedia.org/wiki/Quantum_tomography">quantum state tomography</a>, but in 1931 the experimental physicists couldn&rsquo;t measure the state of a quantum system directly. Rather, they were able to measure only some properties of it. Since the state $x_{t}$ encodes every information of the system, what experimentalists could observe in their labs were <em>functions</em> of the state $f(x_{t})$, oftentimes called <em>observables</em>. Notice that this way of thinking is not restricted to atomic physics, and can be applied to many diverse domains. For example, have you ever thought that Google Maps don&rsquo;t actually need to know where you are? It only needs measurements of the position of a bunch of GPS satellites to triangulate you, and give an estimate of your position.</p>
+<p>Let&rsquo;s jump back to 1931, when the mathematician Bernard Koopman noticed that thinking in terms of observables can be useful even outside the domain of quantum mechanics. In his own words: </p>
+<blockquote>
+<p>In recent years the theory of Hilbert space and its linear transformations has come into prominence. [&hellip;] the importance of the theory in quantum mechanics is known to all. It is the object of this note to outline certain investigations of our own in which the domain of this theory has been extended in such a way as to include classical Hamiltonian mechanics, or, more generally, systems defining a steady n-dimensional flow of a fluid of positive density.</p>
+</blockquote>
+<p>Let&rsquo;s follow this hunch, and assume that the evolution of the state $x_{t} \to x_{t + 1}$ is determined by a rule $S$ so that $x_{t + 1} = S(x_{t})$. Now let&rsquo;s pick any observable $f$. Recalling that $f$ is just a function of the state, we have that $f(x_{t + 1}) = f(S(x_{t}))$. In summary, the original observable $f$ evaluated at $x_{t + 1}$ equates to the composition of $f$ with the dynamical rule $S$, evaluated at $x_{t}$. Using a common notation let me write $f \circ S$ as the composition of $f$ and $S$. Notice that $f\circ S$ is just another function of the state, that is, <em>another observable</em>. This composition property is <a href="LINK HERE">linear</a>, meaning that if take an arbitrary linear combination of observables $\alpha f + \beta g$, the composition with $S$ preserves it:</p>
+<p>$$(\alpha f + \beta g)(x_{t +1}) = \alpha f(x_{t + 1}) + \beta g(x_{t +1}) = \alpha (f\circ S)(x_{t}) + \beta (g \circ S)(x_{t}) = \big[(\alpha f + \beta g) \circ S \big](x_{t}).$$ </p>
+<p>So, the evolution of observables can be expressed as a <em>linear rule</em> mapping observables to observables, let me denote it $\mathsf{T}_{S}$. The operator $\mathsf{T}_{S}$ acts on an observable $f$ as</p>
+<p>$$f(x_{t + 1}) = (\mathsf{T}_{S}f)(x_{t}) := f(S(x_{t})).$$</p>
+<p>If we happen to know $\mathsf{T}_{S}$, we automatically have a <em>linear</em> description of the evolution process <em>as a whole</em>, for any arbitrary observable. This is the operator way, once again, quantum-mechanics edition. </p>
+<p>To actually show that this formulation of the operator way is equivalent to the first one I gave, we need just a small additional step. We need to conceive observables as abstract objects $f$, which can be queried at any point $x$ by an <em>evaluation</em> object[^6], which I&rsquo;ll denote — for NO REASON at all 🙈 — $\phi(x)$, and let me denote this evaluation procedure as a scalar product $f(x) = \langle f, \phi(x)\rangle$. In this notation,</p>
+<p>$$f(x_{t + 1}) = \langle f, \phi(x_{t + 1})\rangle = (\mathsf{T}_{S}f)(x_{t}) = \langle \mathsf{T}_{S}f, \phi(x_{t})\rangle = \langle f, \mathsf{T}_{S}^{*}\phi(x_{t})\rangle$$</p>
+<p>If you swallowed this, recalling that the relation above holds for any observable $f$, we have that</p>
+<p>$$\phi(x_{t + 1}) = \mathsf{T}_{S}^{*}\phi(x_{t})$$</p>
+<h2>What&rsquo;s next?</h2>
+<p>If you&rsquo;ve made up this far, thank you! Writing a blog post was a first time for me; if you have any comments, questions, or complaints feel free to reach out, I&rsquo;ll be happy to answer! </p>
+<p>In a tentative next post, I&rsquo;d like to present the most interesting applications of the operator way to date, spanning areas such as</p>
+<ul>
+<li>Molecular dynamics</li>
+<li>Robotics</li>
+<li>Reinforcement Learning</li>
+<li>Climate Science</li>
+<li>Neural Networks&rsquo; interpretability</li>
+</ul>
+<p>Stay tuned!</p>
+<p>[^1]: For example through a government bond.
+[^2]: In the extended sense I&rsquo;ve just explained.
+[^3]: Like transformers or state space models.
+[^4]: TODO! Link VampNets, DPNets, NCP &amp; the other methods from applied maths.
+[^5]: Physicists, often refer to the state as the <em>wave-function</em> of the system.
+[^6]: I&rsquo;m being extra-sloppy here, apologies to the analysts.</p>
+
+
+    </main>
+
+    <footer>
+      <p>This website was built with <a href="https://github.com/venthur/blag">blag</a>.</p>
+  </footer>
+  
+  
+  <script src="/footnotes.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : true
+        });
+    });
+</script>
+<script src="/theme.js"></script>
+  
+  
+  </body>
+
+</html>
