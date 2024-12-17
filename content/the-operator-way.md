@@ -5,7 +5,7 @@ Tags:
 
 ## A paradigm to rethink dynamical processes
 
-- How to sensibly choose the next word to complete this unfinished —— ?
+- How to sensibly choose the next word to complete this unfinished — ?
 - How much time it takes, on average, for a new experimental drug to bind to the human organism?
 - How can self-driving vehicles drive safely at all?
  
@@ -34,12 +34,12 @@ In machine learning and AI, we make use of observations and data to devise *mode
 - **Prediction**: *forecasting* $x_{t + 1}$ or $\mathbb{P}[x_{t + 1}]$, having observed $x_{t}$.
 - **Control**: nudging the system toward a desired state $x_{t +1}$, starting from $x_{t}$.
 ### The case of *linear* models
-An evolving process is said to be linear when its rate of change does not depend on the current state of the system $x_{t}$. As an example of linear evolution, imagine that at some time $t$ we lend some money $x_{t}$ at a fixed rate of 3%[^bonds]. After one year, the value of our investment $x_{t + 1}$ will be increased by 3%, irrespectively of the initial amount invested. 
+An evolving process is said to be linear when its rate of change does not depend on the current state of the system $x_{t}$. As an example of linear evolution, imagine that at some time $t$ we lend some money $x_{t}$ at a fixed rate of 3% [^1] . After one year, the value of our investment $x_{t + 1}$ will be increased by 3%, irrespectively of the initial amount invested. 
 
 **A bit of math.** So far, I haven't bothered defining what our observations $x_{t}$ *are*. In the following, I will be content assuming that:
 1. It makes sense to multiply $x$ with a number $\alpha$. For example, if $x_{t}$, is the amount of our investment in millions, then $1000000 \cdot x$ is  our investment in dollars.
 2. Two different $x$, $x'$ can be meaninfgully *summed together*. 
-If both conditions are satisfied, I'll generically refer to $x$ as a *vector*. [Euclidean vectors]() clearly satisfy them, but notice that also *functions* can be summed together and multiplied by a arbitrary numbers to get... yet another function. If $x_{t}$ is a vector[^vectors] and follows a *linear* evolution, it exists a rule $\mathsf{T}$ such that:
+If both conditions are satisfied, I'll generically refer to $x$ as a *vector*. [Euclidean vectors]() clearly satisfy them, but notice that also *functions* can be summed together and multiplied by a arbitrary numbers to get... yet another function. If $x_{t}$ is a vector[^2] and follows a *linear* evolution, it exists a rule $\mathsf{T}$ such that:
 
 1. $x_{t + 1} = \mathsf{T}x_{t}$,
 2. $\mathsf{T}(x + y) = \mathsf{T}x + \mathsf{T}y$, 
@@ -64,7 +64,7 @@ There are many more options, and *before even trying* to throw some AI at our da
 
 Coming back to our examples:
 - In symbolic regression, the target is an analytical equation, which can be approximated from data using tools ranging from genetic algorithms to deep learning. Symbolic regression is perfect to learn deterministic equations such as the aforementioned Newton laws. It  provides extremely interpretable models, which are easy enough to query to predict new data. Astrophysicists, [for example](https://www.ias.edu/news/astrophysicists-weigh-galaxy-clusters-artificial-intelligence), are already deploying it succesfully in cutting-edge research use cases. it is being deployed succesfully.
-- As I've noted already, large language models approximate a transition probability  $\mathbb{P}(x_{t + 1} | x_{t})$ and leverage expressive neural-network architectures[^llms-nn] on huge amounts of data to get accurate predictions. Interpreting and controlling language models, however, it is still a formidable task — ever heard of *alignment* and *mechanistic interpretability*?
+- As I've noted already, large language models approximate a transition probability  $\mathbb{P}(x_{t + 1} | x_{t})$ and leverage expressive neural-network architectures[^3] on huge amounts of data to get accurate predictions. Interpreting and controlling language models, however, it is still a formidable task — ever heard of *alignment* and *mechanistic interpretability*?
 ## The Operator Way
 The operator way offers a different option, motivated by the following widely-applicable observation
 
@@ -86,7 +86,7 @@ In the introductory paragraph I've argued that the operator way can be happily m
 
 Now, suppose someone gave us $\phi$. In this case, $\mathsf{T}$ can be approximated from data by minimizing the sum of the squared errors ${\rm Error}(\mathsf{T}) = \sum_{t} \Vert \phi(x_{t +1}) - \mathsf{T}\phi(X_{t})\Vert^{2}$. For any reader with some data-science experience: this is just an instance of multivariate linear regression, where $\phi(x_{t + 1})$/$\phi(x_{t})$ are the dependent/independent variables, respectively.
 
-When $\phi$ is known, approximating $\mathsf{T}$ from data is a well-specified problem, which can be solved efficiently. On the other hand, when a suitable transformation $\phi$ is unknown, one can bootstrap the whole process learning both $\phi$ and $\mathsf{T}$ from data. This is a more challenging scenario than approximating $\mathsf{T}$ alone, but a number of compelling options are already available[^reprlearning].
+When $\phi$ is known, approximating $\mathsf{T}$ from data is a well-specified problem, which can be solved efficiently. On the other hand, when a suitable transformation $\phi$ is unknown, one can bootstrap the whole process learning both $\phi$ and $\mathsf{T}$ from data. This is a more challenging scenario than approximating $\mathsf{T}$ alone, but a number of compelling options are already available[^4].
 
 There is a catch in all of this. The catch lies in the nature of the linearizing representation $\phi$. The theory says it exists, but it also says that it might be *infinite dimensional* — if you're uncomfortable with infinities, just picture yourself $\phi(x_{t})$ as an euclidean vector with an infinite number of components. Pretty impractical to store in a computer. 
 
@@ -97,7 +97,7 @@ Luckily, this is just a problem *in theory*, and can be effectively circumvented
 
 As we approach the end of this post, allow me just few more lines to describe how the operator way originated in the early days of quantum mechanics. You'll be surprised (hopefully even awed) to see how it emerged from a *completely different way of thinking* evolving processes!
 ## The Operator Way and Quantum Mechanics.
-It's 1931, the foundations of quantum mechanics have been laid down by just few years. In this novel view of nature, a physical system is entirely described by its so-called *state* $x$, which in practice is an Euclidean vector or a function[^wf]. The state $x_{t}$ provides information on the system, at a given time $t$. Nowdays we have [quantum state tomography](https://en.wikipedia.org/wiki/Quantum_tomography), but in 1931 the experimental physicists couldn't measure the state of a quantum system directly. Rather, they were able to measure only some properties of it. Since the state $x_{t}$ encodes every information of the system, what experimentalists could observe in their labs were *functions* of the state $f(x_{t})$, oftentimes called *observables*. Notice that this way of thinking is not restricted to atomic physics, and can be applied to many diverse domains. For example, have you ever thought that Google Maps don't actually need to know where you are? It only needs measurements of the position of a bunch of GPS satellites to triangulate you, and give an estimate of your position.
+It's 1931, the foundations of quantum mechanics have been laid down by just few years. In this novel view of nature, a physical system is entirely described by its so-called *state* $x$, which in practice is an Euclidean vector or a function[^5]. The state $x_{t}$ provides information on the system, at a given time $t$. Nowdays we have [quantum state tomography](https://en.wikipedia.org/wiki/Quantum_tomography), but in 1931 the experimental physicists couldn't measure the state of a quantum system directly. Rather, they were able to measure only some properties of it. Since the state $x_{t}$ encodes every information of the system, what experimentalists could observe in their labs were *functions* of the state $f(x_{t})$, oftentimes called *observables*. Notice that this way of thinking is not restricted to atomic physics, and can be applied to many diverse domains. For example, have you ever thought that Google Maps don't actually need to know where you are? It only needs measurements of the position of a bunch of GPS satellites to triangulate you, and give an estimate of your position.
 
 Let's jump back to 1931, when the mathematician Bernard Koopman noticed that thinking in terms of observables can be useful even outside the domain of quantum mechanics. In his own words: 
 
@@ -113,7 +113,7 @@ $$f(x_{t + 1}) = (\mathsf{T}\_{S}f)(x_{t}) := f(S(x_{t})).$$
 
 If we happen to know $\mathsf{T}\_{S}$, we automatically have a *linear* description of the evolution process *as a whole*, for any arbitrary observable. This is the operator way, once again, quantum-mechanics edition. 
 
-To actually show that this formulation of the operator way is equivalent to the first one I gave, we need just a small additional step. We need to conceive observables as abstract objects $f$, which can be queried at any point $x$ by an *evaluation* object[^topology], which I'll denote — for NO REASON at all 🙈 — $\phi(x)$, and let me denote this evaluation procedure as a scalar product $f(x) = \langle f, \phi(x)\rangle$. In this notation,
+To actually show that this formulation of the operator way is equivalent to the first one I gave, we need just a small additional step. We need to conceive observables as abstract objects $f$, which can be queried at any point $x$ by an *evaluation* object[^6], which I'll denote — for NO REASON at all 🙈 — $\phi(x)$, and let me denote this evaluation procedure as a scalar product $f(x) = \langle f, \phi(x)\rangle$. In this notation,
 
 $$f(x_{t + 1}) = \langle f, \phi(x_{t + 1})\rangle = (\mathsf{T}\_{S}f)(x_{t}) = \langle \mathsf{T}\_{S}f, \phi(x_{t})\rangle = \langle f, \mathsf{T}\_{S}^{*}\phi(x_{t})\rangle$$
 
@@ -135,9 +135,9 @@ In a tentative next post, I'd like to present the most interesting applications 
 
 Stay tuned!
 
-[^bonds]: For example through a government bond.
-[^vectors]: In the extended sense I've just explained.
-[^llms-nn]: Like transformers or state space models.
-[^reprlearning]: TODO! Link VampNets, DPNets, NCP & the other methods from applied maths.
-[^wf]: Physicists, often refer to the state as the *wave-function* of the system.
-[^topology]: I'm being extra-sloppy here, apologies to the analysts. 
+[^1]: For example through a government bond.
+[^2]: In the extended sense I've just explained.
+[^3]: Like transformers or state space models.
+[^4]: TODO! Link VampNets, DPNets, NCP & the other methods from applied maths.
+[^5]: Physicists, often refer to the state as the *wave-function* of the system.
+[^6]: I'm being extra-sloppy here, apologies to the analysts.

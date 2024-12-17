@@ -1,32 +1,56 @@
 @import "code-light.css" (prefers-color-scheme: light);
 @import "code-dark.css" (prefers-color-scheme: dark);
 
+/* Default (auto: prefers-color-scheme) */
 @media (prefers-color-scheme: light) {
-    :root {
-        --background: #FFFFFF;
-        --background-dim: #f5f7f9;
+  :root {
+      --background: #FFFFFF;
+      --background-dim: #f5f7f9;
 
-        --foreground: #2B303A;
-        --foreground-dim: #576379;
-        --foreground-heavy: #191C22;
+      --foreground: #2B303A;
+      --foreground-dim: #576379;
+      --foreground-heavy: #3790ba;
 
-        --primary-color: #375287;
-    }
+      --primary-color: #3790ba;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background: #2B363B;
-        --background-dim: #2F3C42;
+  :root {
+      --background: #2b2b2b;
+      --background-dim: #2b2b2b;
 
-        --foreground: #f0f2f3;
-        --foreground-dim: #d5d5d5;
-        --foreground-heavy: #f2f4f5;
+      --foreground: #f0f2f3;
+      --foreground-dim: #d5d5d5;
+      --foreground-heavy: #78B3CE;
 
-        --primary-color: #A1C5FF;
-    }
+      --primary-color: #78B3CE;
+  }
 }
 
+/* Explicit light theme override */
+.light-theme {
+  --background: #FFFFFF;
+  --background-dim: #f5f7f9;
+
+  --foreground: #2B303A;
+  --foreground-dim: #576379;
+  --foreground-heavy: #3790ba;
+
+  --primary-color: #3790ba;
+}
+
+/* Explicit dark theme override */
+.dark-theme {
+  --background: #2b2b2b;
+  --background-dim: #2b2b2b;
+
+  --foreground: #f0f2f3;
+  --foreground-dim: #d5d5d5;
+  --foreground-heavy: #78B3CE;
+
+  --primary-color: #78B3CE;
+}
 
 html {
   font-size: 18px;
@@ -35,11 +59,12 @@ html {
 
 body {
   margin: 0 auto;
-  max-width: 50rem;
+  max-width: 45rem;
   background: var(--background);
   color: var(--foreground);
-  line-height: 1.5;
+  line-height: 1.75;
   padding: 0rem 0.5rem;
+  font-weight: 300;
 }
 
 aside {
@@ -57,13 +82,25 @@ h2,
 h3,
 h4,
 h5,
-h6,
-strong {
+h6 {
     color: var(--foreground-heavy);
+    font-weight: 300;
+    font-style: normal;
+}
+
+h1 {
+  font-weight: 500;
+  font-style: normal;
+}
+
+strong {
+  font-weight: 500;
+  font-style: normal;
 }
 
 a {
     color: var(--primary-color);
+    text-decoration: none;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -71,7 +108,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-    text-decoration: underline;
+    font-weight: 400;
 }
 
 nav ul {
@@ -167,4 +204,15 @@ header h1 {
 header h2 {
   display: inline;
   font-size: 1.2rem;
+}
+
+.footnotes {
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.9em;
+}
+
+.footnote-backref {
+  margin-left: 5px;
+  text-decoration: none;
 }

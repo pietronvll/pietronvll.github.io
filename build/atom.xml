@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title></title><link href="htttps://pietronvll.github.io/" rel="alternate"></link><link href="htttps://pietronvll.github.io/atom.xml" rel="self"></link><id>htttps://pietronvll.github.io/</id><updated>2024-12-16T12:00:00+01:00</updated><entry><title>The Operator Way</title><link href="htttps://pietronvll.github.io/the-operator-way.html" rel="alternate"></link><published>2024-12-16T12:00:00+01:00</published><updated>2024-12-16T12:00:00+01:00</updated><author><name>Pietro Novelli</name></author><id>tag:pietronvll.github.io,2024-12-16:/the-operator-way.html</id><summary type="html">A paradigm to rethink dynamical processes</summary><content type="html">&lt;h2&gt;A paradigm to rethink dynamical processes&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;How to sensibly choose the next word to complete this unfinished —— ?&lt;/li&gt;
+&lt;li&gt;How to sensibly choose the next word to complete this unfinished — ?&lt;/li&gt;
 &lt;li&gt;How much time it takes, on average, for a new experimental drug to bind to the human organism?&lt;/li&gt;
 &lt;li&gt;How can self-driving vehicles drive safely at all?&lt;/li&gt;
 &lt;/ul&gt;
@@ -26,11 +26,11 @@ In &lt;a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/ent
 &lt;li&gt;&lt;strong&gt;Control&lt;/strong&gt;: nudging the system toward a desired state $x_{t +1}$, starting from $x_{t}$.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;The case of &lt;em&gt;linear&lt;/em&gt; models&lt;/h3&gt;
-&lt;p&gt;An evolving process is said to be linear when its rate of change does not depend on the current state of the system $x_{t}$. As an example of linear evolution, imagine that at some time $t$ we lend some money $x_{t}$ at a fixed rate of 3%[^bonds]. After one year, the value of our investment $x_{t + 1}$ will be increased by 3%, irrespectively of the initial amount invested. &lt;/p&gt;
+&lt;p&gt;An evolving process is said to be linear when its rate of change does not depend on the current state of the system $x_{t}$. As an example of linear evolution, imagine that at some time $t$ we lend some money $x_{t}$ at a fixed rate of 3% [^1] . After one year, the value of our investment $x_{t + 1}$ will be increased by 3%, irrespectively of the initial amount invested. &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;A bit of math.&lt;/strong&gt; So far, I haven&amp;rsquo;t bothered defining what our observations $x_{t}$ &lt;em&gt;are&lt;/em&gt;. In the following, I will be content assuming that:
 1. It makes sense to multiply $x$ with a number $\alpha$. For example, if $x_{t}$, is the amount of our investment in millions, then $1000000 \cdot x$ is  our investment in dollars.
 2. Two different $x$, $x&amp;rsquo;$ can be meaninfgully &lt;em&gt;summed together&lt;/em&gt;. 
-If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &lt;em&gt;vector&lt;/em&gt;. &lt;a href=""&gt;Euclidean vectors&lt;/a&gt; clearly satisfy them, but notice that also &lt;em&gt;functions&lt;/em&gt; can be summed together and multiplied by a arbitrary numbers to get&amp;hellip; yet another function. If $x_{t}$ is a vector[^vectors] and follows a &lt;em&gt;linear&lt;/em&gt; evolution, it exists a rule $\mathsf{T}$ such that:&lt;/p&gt;
+If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &lt;em&gt;vector&lt;/em&gt;. &lt;a href=""&gt;Euclidean vectors&lt;/a&gt; clearly satisfy them, but notice that also &lt;em&gt;functions&lt;/em&gt; can be summed together and multiplied by a arbitrary numbers to get&amp;hellip; yet another function. If $x_{t}$ is a vector[^2] and follows a &lt;em&gt;linear&lt;/em&gt; evolution, it exists a rule $\mathsf{T}$ such that:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$x_{t + 1} = \mathsf{T}x_{t}$,&lt;/li&gt;
 &lt;li&gt;$\mathsf{T}(x + y) = \mathsf{T}x + \mathsf{T}y$, &lt;/li&gt;
@@ -53,7 +53,7 @@ If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &
 &lt;/ol&gt;
 &lt;p&gt;Coming back to our examples:
 - In symbolic regression, the target is an analytical equation, which can be approximated from data using tools ranging from genetic algorithms to deep learning. Symbolic regression is perfect to learn deterministic equations such as the aforementioned Newton laws. It  provides extremely interpretable models, which are easy enough to query to predict new data. Astrophysicists, &lt;a href="https://www.ias.edu/news/astrophysicists-weigh-galaxy-clusters-artificial-intelligence"&gt;for example&lt;/a&gt;, are already deploying it succesfully in cutting-edge research use cases. it is being deployed succesfully.
-- As I&amp;rsquo;ve noted already, large language models approximate a transition probability  $\mathbb{P}(x_{t + 1} | x_{t})$ and leverage expressive neural-network architectures[^llms-nn] on huge amounts of data to get accurate predictions. Interpreting and controlling language models, however, it is still a formidable task — ever heard of &lt;em&gt;alignment&lt;/em&gt; and &lt;em&gt;mechanistic interpretability&lt;/em&gt;?&lt;/p&gt;
+- As I&amp;rsquo;ve noted already, large language models approximate a transition probability  $\mathbb{P}(x_{t + 1} | x_{t})$ and leverage expressive neural-network architectures[^3] on huge amounts of data to get accurate predictions. Interpreting and controlling language models, however, it is still a formidable task — ever heard of &lt;em&gt;alignment&lt;/em&gt; and &lt;em&gt;mechanistic interpretability&lt;/em&gt;?&lt;/p&gt;
 &lt;h2&gt;The Operator Way&lt;/h2&gt;
 &lt;p&gt;The operator way offers a different option, motivated by the following widely-applicable observation&lt;/p&gt;
 &lt;blockquote&gt;
@@ -73,7 +73,7 @@ If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &
 &lt;li&gt;A &lt;em&gt;latent linear model&lt;/em&gt; $\mathsf{T}$ such that $\phi(x_{t +1}) = \mathsf{T}\phi(x_{t}).$&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now, suppose someone gave us $\phi$. In this case, $\mathsf{T}$ can be approximated from data by minimizing the sum of the squared errors ${\rm Error}(\mathsf{T}) = \sum_{t} \Vert \phi(x_{t +1}) - \mathsf{T}\phi(X_{t})\Vert^{2}$. For any reader with some data-science experience: this is just an instance of multivariate linear regression, where $\phi(x_{t + 1})$/$\phi(x_{t})$ are the dependent/independent variables, respectively.&lt;/p&gt;
-&lt;p&gt;When $\phi$ is known, approximating $\mathsf{T}$ from data is a well-specified problem, which can be solved efficiently. On the other hand, when a suitable transformation $\phi$ is unknown, one can bootstrap the whole process learning both $\phi$ and $\mathsf{T}$ from data. This is a more challenging scenario than approximating $\mathsf{T}$ alone, but a number of compelling options are already available[^reprlearning].&lt;/p&gt;
+&lt;p&gt;When $\phi$ is known, approximating $\mathsf{T}$ from data is a well-specified problem, which can be solved efficiently. On the other hand, when a suitable transformation $\phi$ is unknown, one can bootstrap the whole process learning both $\phi$ and $\mathsf{T}$ from data. This is a more challenging scenario than approximating $\mathsf{T}$ alone, but a number of compelling options are already available[^4].&lt;/p&gt;
 &lt;p&gt;There is a catch in all of this. The catch lies in the nature of the linearizing representation $\phi$. The theory says it exists, but it also says that it might be &lt;em&gt;infinite dimensional&lt;/em&gt; — if you&amp;rsquo;re uncomfortable with infinities, just picture yourself $\phi(x_{t})$ as an euclidean vector with an infinite number of components. Pretty impractical to store in a computer. &lt;/p&gt;
 &lt;p&gt;Luckily, this is just a problem &lt;em&gt;in theory&lt;/em&gt;, and can be effectively circumvented:&lt;/p&gt;
 &lt;ul&gt;
@@ -82,7 +82,7 @@ If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &
 &lt;/ul&gt;
 &lt;p&gt;As we approach the end of this post, allow me just few more lines to describe how the operator way originated in the early days of quantum mechanics. You&amp;rsquo;ll be surprised (hopefully even awed) to see how it emerged from a &lt;em&gt;completely different way of thinking&lt;/em&gt; evolving processes!&lt;/p&gt;
 &lt;h2&gt;The Operator Way and Quantum Mechanics.&lt;/h2&gt;
-&lt;p&gt;It&amp;rsquo;s 1931, the foundations of quantum mechanics have been laid down by just few years. In this novel view of nature, a physical system is entirely described by its so-called &lt;em&gt;state&lt;/em&gt; $x$, which in practice is an Euclidean vector or a function[^wf]. The state $x_{t}$ provides information on the system, at a given time $t$. Nowdays we have &lt;a href="https://en.wikipedia.org/wiki/Quantum_tomography"&gt;quantum state tomography&lt;/a&gt;, but in 1931 the experimental physicists couldn&amp;rsquo;t measure the state of a quantum system directly. Rather, they were able to measure only some properties of it. Since the state $x_{t}$ encodes every information of the system, what experimentalists could observe in their labs were &lt;em&gt;functions&lt;/em&gt; of the state $f(x_{t})$, oftentimes called &lt;em&gt;observables&lt;/em&gt;. Notice that this way of thinking is not restricted to atomic physics, and can be applied to many diverse domains. For example, have you ever thought that Google Maps don&amp;rsquo;t actually need to know where you are? It only needs measurements of the position of a bunch of GPS satellites to triangulate you, and give an estimate of your position.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s 1931, the foundations of quantum mechanics have been laid down by just few years. In this novel view of nature, a physical system is entirely described by its so-called &lt;em&gt;state&lt;/em&gt; $x$, which in practice is an Euclidean vector or a function[^5]. The state $x_{t}$ provides information on the system, at a given time $t$. Nowdays we have &lt;a href="https://en.wikipedia.org/wiki/Quantum_tomography"&gt;quantum state tomography&lt;/a&gt;, but in 1931 the experimental physicists couldn&amp;rsquo;t measure the state of a quantum system directly. Rather, they were able to measure only some properties of it. Since the state $x_{t}$ encodes every information of the system, what experimentalists could observe in their labs were &lt;em&gt;functions&lt;/em&gt; of the state $f(x_{t})$, oftentimes called &lt;em&gt;observables&lt;/em&gt;. Notice that this way of thinking is not restricted to atomic physics, and can be applied to many diverse domains. For example, have you ever thought that Google Maps don&amp;rsquo;t actually need to know where you are? It only needs measurements of the position of a bunch of GPS satellites to triangulate you, and give an estimate of your position.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s jump back to 1931, when the mathematician Bernard Koopman noticed that thinking in terms of observables can be useful even outside the domain of quantum mechanics. In his own words: &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In recent years the theory of Hilbert space and its linear transformations has come into prominence. [&amp;hellip;] the importance of the theory in quantum mechanics is known to all. It is the object of this note to outline certain investigations of our own in which the domain of this theory has been extended in such a way as to include classical Hamiltonian mechanics, or, more generally, systems defining a steady n-dimensional flow of a fluid of positive density.&lt;/p&gt;
@@ -92,7 +92,7 @@ If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &
 &lt;p&gt;So, the evolution of observables can be expressed as a &lt;em&gt;linear rule&lt;/em&gt; mapping observables to observables, let me denote it $\mathsf{T}_{S}$. The operator $\mathsf{T}_{S}$ acts on an observable $f$ as&lt;/p&gt;
 &lt;p&gt;$$f(x_{t + 1}) = (\mathsf{T}_{S}f)(x_{t}) := f(S(x_{t})).$$&lt;/p&gt;
 &lt;p&gt;If we happen to know $\mathsf{T}_{S}$, we automatically have a &lt;em&gt;linear&lt;/em&gt; description of the evolution process &lt;em&gt;as a whole&lt;/em&gt;, for any arbitrary observable. This is the operator way, once again, quantum-mechanics edition. &lt;/p&gt;
-&lt;p&gt;To actually show that this formulation of the operator way is equivalent to the first one I gave, we need just a small additional step. We need to conceive observables as abstract objects $f$, which can be queried at any point $x$ by an &lt;em&gt;evaluation&lt;/em&gt; object[^topology], which I&amp;rsquo;ll denote — for NO REASON at all 🙈 — $\phi(x)$, and let me denote this evaluation procedure as a scalar product $f(x) = \langle f, \phi(x)\rangle$. In this notation,&lt;/p&gt;
+&lt;p&gt;To actually show that this formulation of the operator way is equivalent to the first one I gave, we need just a small additional step. We need to conceive observables as abstract objects $f$, which can be queried at any point $x$ by an &lt;em&gt;evaluation&lt;/em&gt; object[^6], which I&amp;rsquo;ll denote — for NO REASON at all 🙈 — $\phi(x)$, and let me denote this evaluation procedure as a scalar product $f(x) = \langle f, \phi(x)\rangle$. In this notation,&lt;/p&gt;
 &lt;p&gt;$$f(x_{t + 1}) = \langle f, \phi(x_{t + 1})\rangle = (\mathsf{T}_{S}f)(x_{t}) = \langle \mathsf{T}_{S}f, \phi(x_{t})\rangle = \langle f, \mathsf{T}_{S}^{*}\phi(x_{t})\rangle$$&lt;/p&gt;
 &lt;p&gt;If you swallowed this, recalling that the relation above holds for any observable $f$, we have that&lt;/p&gt;
 &lt;p&gt;$$\phi(x_{t + 1}) = \mathsf{T}_{S}^{*}\phi(x_{t})$$&lt;/p&gt;
@@ -107,9 +107,9 @@ If both conditions are satisfied, I&amp;rsquo;ll generically refer to $x$ as a &
 &lt;li&gt;Neural Networks&amp;rsquo; interpretability&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Stay tuned!&lt;/p&gt;
-&lt;p&gt;[^bonds]: For example through a government bond.
-[^vectors]: In the extended sense I&amp;rsquo;ve just explained.
-[^llms-nn]: Like transformers or state space models.
-[^reprlearning]: TODO! Link VampNets, DPNets, NCP &amp;amp; the other methods from applied maths.
-[^wf]: Physicists, often refer to the state as the &lt;em&gt;wave-function&lt;/em&gt; of the system.
-[^topology]: I&amp;rsquo;m being extra-sloppy here, apologies to the analysts. &lt;/p&gt;</content></entry></feed>
+&lt;p&gt;[^1]: For example through a government bond.
+[^2]: In the extended sense I&amp;rsquo;ve just explained.
+[^3]: Like transformers or state space models.
+[^4]: TODO! Link VampNets, DPNets, NCP &amp;amp; the other methods from applied maths.
+[^5]: Physicists, often refer to the state as the &lt;em&gt;wave-function&lt;/em&gt; of the system.
+[^6]: I&amp;rsquo;m being extra-sloppy here, apologies to the analysts.&lt;/p&gt;</content></entry></feed>
