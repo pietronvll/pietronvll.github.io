@@ -216,3 +216,16 @@ header h2 {
   margin-left: 5px;
   text-decoration: none;
 }
+
+.image-container {
+  text-align: right; /* Aligns content (image) to the right */
+  padding: 1rem; /* Optional: Adds spacing */
+}
+.circle-image {
+  width: 150px; /* Adjust the size of the image */
+  height: 150px; /* Ensures the image is a square */
+  object-fit: cover; /* Ensures the image maintains aspect ratio and fills the box */
+  border-radius: 50%; /* Makes the image circular */
+  float:left;
+  margin-right: 10px;
+}
