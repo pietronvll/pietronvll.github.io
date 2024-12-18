@@ -18,7 +18,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
       --background: #2b2b2b;
-      --background-dim: #2b2b2b;
+      --background-dim: #18252b;
 
       --foreground: #f0f2f3;
       --foreground-dim: #d5d5d5;
@@ -43,7 +43,7 @@
 /* Explicit dark theme override */
 .dark-theme {
   --background: #2b2b2b;
-  --background-dim: #2b2b2b;
+  --background-dim: #18252b;
 
   --foreground: #f0f2f3;
   --foreground-dim: #d5d5d5;
