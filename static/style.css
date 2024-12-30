@@ -229,3 +229,69 @@ header h2 {
   float:left;
   margin-right: 10px;
 }
+
+.contacts-section {
+  padding: 2rem 0;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.contact-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.linkedin { background-color: #0077b5; }
+.scholar { background-color: #4285f4; }
+.github { background-color: #333333; }
+.email { background-color: #ea4335; }
+.twitter { background-color: #000000; }
+
+.talks-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.talk-item {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.talk-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #666;
+}
+
+.talk-date {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.talk-title {
+  font-weight: 600;
+}
