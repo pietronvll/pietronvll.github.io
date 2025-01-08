@@ -39,17 +39,7 @@
   <h1>The Operator Way</h1>
   
 
-  <h2>Feedbacks:</h2>
-<ul>
-<li>Visuals about linearization of dynamical systems &amp; dynamical systems in general</li>
-<li>Perhaps it would be nice to expand [the history section] and tell why it took so long for the operator way to be taken seriously and what are its main advantages/drawbacks when compared to classical methods.</li>
-<li>Too much dwelling on linear transformation possibly not needed</li>
-<li>giving an example of linearizing a nonlinear dynamical system could help a lot to digest what is this Koopman operator</li>
-<li>Typos &amp; missing hyperlinks</li>
-<li>A simple example showing why the operator way is better than deeplearning. If my only task is prediction, at the end I still need to compute $\phi^{-1}\circ \mathsf{T}\circ \phi$.</li>
-<li><a href="https://www.youtube.com/watch?v=kYB8IZa5AuE&amp;ab_channel=3Blue1Brown">Tutorial on linear maps by 3Blue1Brown</a></li>
-</ul>
-<h2>A paradigm to rethink dynamical processes</h2>
+  <h2>A paradigm to rethink dynamical processes</h2>
 <ul>
 <li>How to sensibly choose the next word to complete this unfinished — ?</li>
 <li>How much time it takes, on average, for a new experimental drug to bind to the human organism?</li>
@@ -59,7 +49,6 @@
 <p>Understanding evolution in this broad sense is no small feat. I&rsquo;ll take up the challenge by describing a paradigm that characterizes all sorts of evolving processes, and no, this is not yet another take on <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">transformers</a>.</p>
 <p>The roots of this approach — which I&rsquo;ll call <em>the operator way</em> — stretch all the way back to the dawn of quantum mechanics. However, we need to fast-forward to the early 2000s before a critical mass of researchers (from the fields of stochastic processes and applied math) started getting serious with it. Nowadays, the operator way is making its way into the AI era, where its power and elegance are truly brought to bear.</p>
 <p>Unfortunately, the most insigthful ideas behind the operator way are hidden beneath a thick coat of abstractions, making it a tough topic to enter. This post is an attempt at describing it in plain, non-technical terms, so that as many as possible can appreciate it and the fresh new perspective it offers on the study of sequential and evolving processes.</p>
-<p>Let’s dive in. </p>
 <h2 id="dealing-with-change">Dealing with change</h2>
 <p>Whenever we observe an evolving process, we might find ourselves wondering what&rsquo;s the rule that ties our observations together, if any. In other words, the fact that $x_{t + 1}$ was observed <em>after</em> $x_{t}$ is just a coincidence, or is it the result of a predictable relationship? </p>
 <p>Oftentimes, such a relationship exists. Let&rsquo;s take a look at a couple of examples:</p>
@@ -89,7 +78,7 @@ In <a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entrop
 <li>$\mathsf{T}(x + y) = \mathsf{T}x + \mathsf{T}y$, </li>
 <li>$\mathsf{T}(\alpha x) = \alpha \mathsf{T}x$.</li>
 </ol>
-<p>I&rsquo;ve dubbed such a rule $\mathsf{T}$ as it <strong>T</strong>ransfers $x_{t}$ to $x_{t + 1}$. When $x \in \mathbb{R}^{d}$ is an Euclidean vector, then $\mathsf{T}$ is a $d\times d$ real matrix. In more exotic cases, for example when $x_{t}$ is a <em>function</em>, I&rsquo;ll stick to the mathematicians&rsquo; naming conventions and refer to $\mathsf{T}$ as a <strong><em>linear operator</em></strong>.</p>
+<p>I&rsquo;ve dubbed such a rule $\mathsf{T}$ as it <strong>T</strong>ransfers $x_{t}$ to $x_{t + 1}$. When $x \in \mathbb{R}^{d}$ is an Euclidean vector, then $\mathsf{T}$ is a $d\times d$ real matrix. In more exotic cases, for example when $x_{t}$ is a <em>function</em>, I&rsquo;ll stick to the mathematicians&rsquo; naming conventions and refer to $\mathsf{T}$ as a <strong><em>linear operator</em></strong>. If you are unfamiliar with the concepts of linear transformations, this video by 3Blue1Brown provides an excellent visual explaination of them <iframe width="560" height="315" style="margin:auto; display:block;" src="https://www.youtube.com/embed/kYB8IZa5AuE?si=i1IpoJUqqEMF5wWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 </blockquote>
 <p>If $x_{t}$ evolves linearly, the triad of interpretability, prediction, and control has been completely sorted out by the scientific community, which came up a vast body of elegant and efficient techniques to address these tasks. </p>
 <p>Nonlinear evolutions, on the other hand, are a different beast, with interpretability and control becoming significantly more challenging. This aside on linear systems will be extremely important as we progress. For now, bear with me.</p>

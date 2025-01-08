@@ -2,16 +2,6 @@ Title: The Operator Way
 Description: A paradigm to rethink dynamical processes
 Date: 2024-12-16 12:00
 Tags: 
-
-## Feedbacks:
-
-- Visuals about linearization of dynamical systems & dynamical systems in general
-- Perhaps it would be nice to expand [the history section] and tell why it took so long for the operator way to be taken seriously and what are its main advantages/drawbacks when compared to classical methods.
-- Too much dwelling on linear transformation possibly not needed
-- giving an example of linearizing a nonlinear dynamical system could help a lot to digest what is this Koopman operator
-- Typos & missing hyperlinks
-- A simple example showing why the operator way is better than deeplearning. If my only task is prediction, at the end I still need to compute $\phi^{-1}\circ \mathsf{T}\circ \phi$.
-- [Tutorial on linear maps by 3Blue1Brown](https://www.youtube.com/watch?v=kYB8IZa5AuE&ab_channel=3Blue1Brown)
  
 ## A paradigm to rethink dynamical processes
 
@@ -27,7 +17,6 @@ The roots of this approach — which I'll call *the operator way* — stretch al
 
 Unfortunately, the most insigthful ideas behind the operator way are hidden beneath a thick coat of abstractions, making it a tough topic to enter. This post is an attempt at describing it in plain, non-technical terms, so that as many as possible can appreciate it and the fresh new perspective it offers on the study of sequential and evolving processes.
 
-Let’s dive in. 
 <h2 id="dealing-with-change">Dealing with change</h2>
 Whenever we observe an evolving process, we might find ourselves wondering what's the rule that ties our observations together, if any. In other words, the fact that $x_{t + 1}$ was observed *after* $x_{t}$ is just a coincidence, or is it the result of a predictable relationship? 
 
@@ -57,7 +46,8 @@ A set of observations $x_{t}$ is said to evolve *linearly* when its rate of chan
 >2. $\mathsf{T}(x + y) = \mathsf{T}x + \mathsf{T}y$, 
 >3. $\mathsf{T}(\alpha x) = \alpha \mathsf{T}x$.
 
->I've dubbed such a rule $\mathsf{T}$ as it **T**ransfers $x_{t}$ to $x_{t + 1}$. When $x \in \mathbb{R}^{d}$ is an Euclidean vector, then $\mathsf{T}$ is a $d\times d$ real matrix. In more exotic cases, for example when $x_{t}$ is a *function*, I'll stick to the mathematicians' naming conventions and refer to $\mathsf{T}$ as a ***linear operator***.
+>I've dubbed such a rule $\mathsf{T}$ as it **T**ransfers $x_{t}$ to $x_{t + 1}$. When $x \in \mathbb{R}^{d}$ is an Euclidean vector, then $\mathsf{T}$ is a $d\times d$ real matrix. In more exotic cases, for example when $x_{t}$ is a *function*, I'll stick to the mathematicians' naming conventions and refer to $\mathsf{T}$ as a ***linear operator***. If you are unfamiliar with the concepts of linear transformations, this video by 3Blue1Brown provides an excellent visual explaination of them <iframe width="560" height="315" style="margin:auto; display:block;" src="https://www.youtube.com/embed/kYB8IZa5AuE?si=i1IpoJUqqEMF5wWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 If $x_{t}$ evolves linearly, the triad of interpretability, prediction, and control has been completely sorted out by the scientific community, which came up a vast body of elegant and efficient techniques to address these tasks. 
 
