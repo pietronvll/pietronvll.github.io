@@ -2,8 +2,9 @@ Title: The Operator Way
 Description: A paradigm to rethink dynamical processes
 Date: 2024-12-16 12:00
 Tags: 
- 
+
 ## A paradigm to rethink dynamical processes
+<img src="tow_animation.gif" style="max-width:600px;" alt="The Operator Way" autoplay>
 
 - How to sensibly choose the next word to complete this unfinished — ?
 - How much time it takes, on average, for a new experimental drug to bind to the human organism?
