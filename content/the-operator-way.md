@@ -1,6 +1,6 @@
 Title: The Operator Way
 Description: A paradigm to rethink dynamical processes
-Date: 2024-12-16 12:00
+Date: 2025-01-09 12:00
 Tags: 
 
 ## A paradigm to rethink dynamical processes
