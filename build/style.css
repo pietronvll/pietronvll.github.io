@@ -285,7 +285,7 @@ header h2 {
   content: "•";
   position: absolute;
   left: 0;
-  color: #666;
+  color: var(--foreground-dim);
 }
 
 .talk-date {
@@ -295,4 +295,22 @@ header h2 {
 
 .talk-title {
   font-weight: 600;
+}
+
+
+.major-code-item {
+  border: 2px solid var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.major-code-item .code-item-content p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.95rem;
+}
+
+.talks-list .talk-item p.code-description {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.95rem;
 }
