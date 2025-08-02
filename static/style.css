@@ -35,9 +35,9 @@
 
   --foreground: #2B303A;
   --foreground-dim: #576379;
-  --foreground-heavy: #3790ba;
+  --foreground-heavy: #565656;
 
-  --primary-color: #3790ba;
+  --primary-color: #3451b2;
 }
 
 /* Explicit dark theme override */
@@ -47,14 +47,14 @@
 
   --foreground: #f0f2f3;
   --foreground-dim: #d5d5d5;
-  --foreground-heavy: #78B3CE;
+  --foreground-heavy: #e1e1e1;
 
-  --primary-color: #78B3CE;
+  --primary-color: #a8b1ff;
 }
 
 html {
   font-size: 18px;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -85,7 +85,7 @@ h4,
 h5,
 h6 {
     color: var(--foreground-heavy);
-    font-weight: 300;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -101,7 +101,7 @@ strong {
 
 a {
     color: var(--primary-color);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -267,8 +267,9 @@ header h2 {
 .linkedin { background-color: #0077b5; }
 .scholar { background-color: #4285f4; }
 .github { background-color: #333333; }
-.email { background-color: #ea4335; }
+.email { background-color: darkslategrey; }
 .twitter { background-color: #000000; }
+.cv { background-color: #FF577F; }
 
 .talks-list {
   list-style-type: none;
@@ -299,7 +300,7 @@ header h2 {
 
 
 .major-code-item {
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--foreground-heavy);
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;

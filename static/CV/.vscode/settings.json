@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "typst",
+            "scheme": "file",
+            "pattern": "CV.typ"
+        }
+    ]
+}
