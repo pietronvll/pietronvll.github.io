@@ -15,9 +15,8 @@
     == Research
     #text(rgb("#666666"), size: 9pt)[_In the pdf version of this document, the title of each paper holds a link to the paper itself._]\
     ==== 2025
-    / To appear: (Submitted to NeurIPS 2025)  _#link("#")[Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems]_
-    / To appear: (Submitted to NeurIPS 2025) _#link("#")[Bridging Self-Supervised Representation Learning Losses via Functional CCA]_
-    / ArXiv: (Submitted to npj computational materials) _#link("https://arxiv.org/abs/2505.05652")[Fast and Fourier Features for Transfer Learning of Interatomic Potentials]_
+    / ArXiv: (Submitted to NeurIPS 2025)  _#link("https://arxiv.org/abs/2505.18671")[Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems]_
+    / npj Computational Materials: _#link("https://arxiv.org/abs/2505.05652")[Fast and Fourier Features for Transfer Learning of Interatomic Potentials]_
     / ICML 2025: _#link("https://arxiv.org/abs/2410.14477")[Laplace Transform Based Low-Complexity Learning of Continuous Markov Semigroups]_
 
     ==== 2024
@@ -47,6 +46,9 @@
     / Phys. Rev. Lett.: (Featured in "Physics" & Editors' suggestion) _#link("https://arxiv.org/abs/1806.10344")[Failure of conductance quantization in two-dimensional topological insulators due to nonmagnetic impurities]_.
 
     == Talks and public outreach
+    - Jul 2025: *Invited Talk (Novi Sad, Serbia):* Applied Linear Algebra (ALA25) conference
+    - Jul 2025: *Invited Talk (Porquerolles, France):* New Trends in Statistical Learning
+    - Jun 2025: *Talk at the Machine Learning Group (University of Padua)*
     - March 2025: *Talk at DIAG (La Sapienza, Rome)*
     - January 2025: I wrote #link("https://pietronvll.github.io/the-operator-way.html")[*The Operator Way*], a non-technical blog post describing operator-based methods for dynamical systems.
     - July 2024: *Invited talk (Field Institute, Toronto):* Fourth Symposium on Machine Learning and Dynamical Systems
@@ -112,8 +114,6 @@
     
     - `kooplearn`: A Python library to learn Koopman operators.
 
-    - `ml-confs`: A tiny Python library to handle configurations for machine learning pipelines.
-
-    - `pybandstructure` (with I. Torre): A Python package to compute the band structure of simple periodic Hamiltonians, including tight binding or plane waves models. The package includes submodules to extract thermodynamical properties, density of states, and optical conductivity.
+    - `pybandstructure` (with I. Torre): A Python package to compute the band structure of periodic Hamiltonians, including tight binding or plane waves models.
   ]
 )
