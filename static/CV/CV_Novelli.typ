@@ -69,15 +69,17 @@
 #findMe(links)
 
 #let tagline = [
-  #show link: it => underline(
+#show link: it => underline(
   stroke: primary_colour,
-  [#it]
+  it
 )
 I am a postdoctoral researcher in the #link("https://csml.iit.it/")[Computational Statistics & Machine Learning (CSML)] unit at the Italian Institue of Technology (IIT) in Genova, Italy.
 
 My research focuses on machine learning theory and algorithms, with a particular interest on applications to the physical sciences. My main contributions involve machine learning for dynamical systems, stochastic processes, and atomistic simulations. 
 
 In a previous academic life, I got a PhD in theoretical condensed matter physics from the #link("https://www.sns.it/it")[Scuola Normale Superiore], where I studied electronic many-body effects in 2D materials.
+
+Alongside my academic research activities, I contribute to the machine-learning core of #link("https://zephyra.tech/")[Zephyra], a startup developing generative design software for the manufacuring industry.
 ]
 
 
