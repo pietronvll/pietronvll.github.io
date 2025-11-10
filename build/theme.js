@@ -29,13 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function updateButtonText() {
+    // Function to update button icon with smooth transition
+    function updateButtonIcon() {
         const currentTheme = localStorage.getItem("theme");
-        if (currentTheme === "light") {
-            toggleButton.textContent = "Dark mode 🌗";
-        } else {
-            toggleButton.textContent = "Light mode 🌗";
-        }
+        const icon = currentTheme === "light" ? "moon" : "sun";
+        
+        // Add fade-out class
+        toggleButton.classList.add("theme-toggle-fade");
+        
+        // Wait for fade out, then change icon and fade in
+        setTimeout(() => {
+            toggleButton.innerHTML = `<i data-lucide="${icon}"></i>`;
+            lucide.createIcons(); // Re-initialize lucide for the new icon
+            toggleButton.classList.remove("theme-toggle-fade");
+        }, 150);
     }
 
     toggleButton.addEventListener("click", () => {
@@ -46,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             setTheme("light");
         }
-        updateButtonText();
+        updateButtonIcon();
     });
 
-    // Update the button text on page load
+    // Initialize on page load
     loadTheme();
-    updateButtonText();
-  });
+    updateButtonIcon();
+});

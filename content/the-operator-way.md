@@ -139,7 +139,8 @@ In a tentative next post, I'd like to present the most interesting applications 
 
 _If you would like to cite this post in an academic context, you can use this BibTeX snippet:_
 
-```
+```text
+
 @misc{novelli2025operatorway,
   author = {Novelli, Pietro},
   title = {The Operator Way},
@@ -147,8 +148,6 @@ _If you would like to cite this post in an academic context, you can use this Bi
   year = {2025}
 }
 ```
-
----
 
 [^1]: For example through a government bond.
 [^2]: Like transformers or state space models.
