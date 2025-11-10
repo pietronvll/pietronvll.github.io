@@ -137,6 +137,19 @@ In a tentative next post, I'd like to present the most interesting applications 
 - Climate Science
 - Neural Networks' interpretability
 
+_If you would like to cite this post in an academic context, you can use this BibTeX snippet:_
+
+```
+@misc{novelli2025operatorway,
+  author = {Novelli, Pietro},
+  title = {The Operator Way},
+  url = {https://pietronvll.github.io/the-operator-way},
+  year = {2025}
+}
+```
+
+---
+
 [^1]: For example through a government bond.
 [^2]: Like transformers or state space models.
 [^3]: See, for example, [Lush et al.](https://arxiv.org/abs/1712.09707) using an autoencoding scheme, [Mardt et al.](https://arxiv.org/abs/1710.06012) using an approach linked to canonical correlation analyisis, or [these](https://arxiv.org/abs/2307.09912) [methods](https://arxiv.org/abs/2407.01171) by yours truly.
