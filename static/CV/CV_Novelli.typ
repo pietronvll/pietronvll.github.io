@@ -65,6 +65,7 @@
 
 
 = Pietro Novelli
+#text(size: 10pt, fill: luma(80))[Researcher @ IIT]//, CSO @ Zephyra]
 
 #findMe(links)
 
@@ -79,16 +80,23 @@ My research focuses on machine learning theory and algorithms, with a particular
 
 In a previous academic life, I got a PhD in theoretical condensed matter physics from the #link("https://www.sns.it/it")[Scuola Normale Superiore], where I studied electronic many-body effects in 2D materials.
 
-Alongside my academic research activities, I contribute to the machine-learning core of #link("https://zephyra.tech/")[Zephyra], a startup developing generative design software for the manufacuring industry.
+//Alongside my academic research activities, I contribute to the machine-learning core of #link("https://zephyra.tech/")[Zephyra], a startup developing generative design software for the manufacuring industry.
 ]
 
 
 #let content = [
     #set text(10.5pt)
     == Research Output
+    ==== 2026
+
+    *Accepted @ ICLR 2026*: _#link("https://arxiv.org/abs/2505.18671")[Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems]_
+
+    *arXiv*: _#link("https://arxiv.org/abs/2601.04445")[SpectraFormer: an Attention-Based Raman Unmixing Tool for Accessing the Graphene Buffer-Layer Signature on SiC]_ (Submitted)
+
     ==== 2025
 
-    *arXiv*: _#link("https://arxiv.org/abs/2505.18671")[Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems]_ (Submitted to NeurIPS 2025)
+    *arXiv*: _#link("https://arxiv.org/abs/2512.21409")[`kooplearn`: A Scikit-Learn Compatible Library of Algorithms for Evolution Operator Learning]_ (Submitted to JOSS)
+
     
     *npj Computational Materials*: _#link("https://arxiv.org/abs/2505.05652")[Fast and Fourier Features for Transfer Learning of Interatomic Potentials]_
     
