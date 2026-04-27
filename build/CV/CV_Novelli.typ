@@ -65,7 +65,7 @@
 
 
 = Pietro Novelli
-#text(size: 10pt, fill: luma(80))[Researcher @ IIT]//, CSO @ Zephyra]
+#text(size: 10pt, fill: luma(80))[Researcher @ IIT, Fractional CSO @ Zephyra]
 
 #findMe(links)
 
@@ -76,11 +76,11 @@
 )
 I am a postdoctoral researcher in the #link("https://csml.iit.it/")[Computational Statistics & Machine Learning (CSML)] unit at the Italian Institue of Technology (IIT) in Genova, Italy.
 
+Alongside my academic research activities, I serve as Fractional CSO at #link("https://zephyra.tech/")[Zephyra], a startup developing generative design software for the manufacturing industry.
+
 My research focuses on machine learning theory and algorithms, with a particular interest on applications to the physical sciences. My main contributions involve machine learning for dynamical systems, stochastic processes, and atomistic simulations. 
 
 In a previous academic life, I got a PhD in theoretical condensed matter physics from the #link("https://www.sns.it/it")[Scuola Normale Superiore], where I studied electronic many-body effects in 2D materials.
-
-//Alongside my academic research activities, I contribute to the machine-learning core of #link("https://zephyra.tech/")[Zephyra], a startup developing generative design software for the manufacuring industry.
 ]
 
 
@@ -92,6 +92,8 @@ In a previous academic life, I got a PhD in theoretical condensed matter physics
     *Accepted @ ICLR 2026*: _#link("https://arxiv.org/abs/2505.18671")[Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems]_
 
     *arXiv*: _#link("https://arxiv.org/abs/2601.04445")[SpectraFormer: an Attention-Based Raman Unmixing Tool for Accessing the Graphene Buffer-Layer Signature on SiC]_ (Submitted)
+
+    *SIAM Journal on Mathematics of Data Science:* _#link("https://arxiv.org/abs/2312.17348")[A randomized algorithm to solve reduced rank operator regression]_.
 
     ==== 2025
 
@@ -114,8 +116,6 @@ In a previous academic life, I got a PhD in theoretical condensed matter physics
     
     *ICLR 2024:* _#link("https://arxiv.org/abs/2307.09912")[Learning invariant representations of time-homogeneous stochastic dynamical systems]_.
     
-    *ArXiv:* _#link("https://arxiv.org/abs/2312.17348")[A randomized algorithm to solve reduced rank operator regression]_ (Submitted to SIMODS).
-
     ==== 2023
     
     *NeurIPS 2023 - _spotlight_ paper (3.06% of all submissions):* _#link("https://arxiv.org/abs/2302.02004")[Sharp Spectral Rates for Koopman Operator Learning]_. 

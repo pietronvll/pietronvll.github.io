@@ -516,6 +516,13 @@ header h2 {
   font-size: var(--font-size-5);
 }
 
+.homepage-tagline {
+  margin: var(--space-2) 0 var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-medium);
+}
+
 header nav {
   display: flex;
   flex-direction: row;
