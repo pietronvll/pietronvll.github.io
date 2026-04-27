@@ -4,7 +4,7 @@ Local website development uses `uvx blag` for the site build and `typst` for the
 
 ## Commands
 
-- `make cv` rebuilds `static/CV/CV_Novelli.pdf` and syncs `build/CV/`.
+- `make cv` rebuilds `static/CV/CV_Novelli.pdf` from the Typst source in `cv/`.
 - `make site` rebuilds the website with `uvx blag build`.
 - `make build` runs the CV build and then the website build.
 - `make preview` starts the local dev server with `uvx blag serve`.

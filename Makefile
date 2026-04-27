@@ -2,9 +2,7 @@
 
 cv:
 	@command -v typst >/dev/null 2>&1 || { echo "typst is required for make cv"; exit 1; }
-	typst compile static/CV/CV_Novelli.typ static/CV/CV_Novelli.pdf
-	mkdir -p build/CV
-	cp -f static/CV/* build/CV/
+	typst compile cv/CV_Novelli.typ static/CV/CV_Novelli.pdf
 
 site:
 	uvx blag build
